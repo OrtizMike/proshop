@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useParams, Navigate } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Form, Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import Rating from '../components/Rating'
@@ -8,7 +8,8 @@ import Loader from '../components/Loader'
 import { listProductDetails } from '../actions/productActions'
 
 const ProductScreen = () => {
-    const [qty, setQty] = useState(0)
+    const navigate = useNavigate();
+    const [qty, setQty] = useState(1)
 
     const params = useParams()
     const dispatch = useDispatch()
@@ -22,7 +23,7 @@ const ProductScreen = () => {
 
       const addToCartHandler = () => {
         if (qty > 0) {
-            return <Navigate to={`/cart/${params.id}?qty=${qty}`} />
+            navigate(`/cart/${params.id}?qty=${qty}`, { replace: true }); // <-- redirect
         } else {
             alert('Please select a quantity')
         }
