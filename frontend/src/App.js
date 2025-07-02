@@ -11,6 +11,7 @@ import RegisterScreen from './screens/RegisterScreen';
 import ShippingScreen from './screens/ShippingScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
+import OrderScreen from './screens/OrderScreen';
 
 const App = props => {
   return (
@@ -19,6 +20,7 @@ const App = props => {
       <main className='py-3'>
         <Container>
           <Routes>
+            <Route exact path="/order/:id" element={<OrderScreen />}></Route>
             <Route exact path="/shipping" element={<ShippingScreen />}></Route>
             <Route exact path="/payment" element={<PaymentScreen />}></Route>
             <Route exact path="/placeorder" element={<PlaceOrderScreen />}></Route>
