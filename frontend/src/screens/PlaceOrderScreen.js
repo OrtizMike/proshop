@@ -20,10 +20,6 @@ const PlaceOrderScreen = () => {
     cart.taxPrice = Number((0.15 * cart.itemsPrice).toFixed(2)) // 15% tax
     cart.totalPrice = Number(cart.itemsPrice) + Number(cart.shippingPrice) + Number(cart.taxPrice)
 
-    const addDecimals = (num) => {
-        return (Math.round(num * 100) / 100).toFixed(2)
-    }
-
     const orderCreate = useSelector((state) => state.orderCreate)
     const { order, success, error } = orderCreate
 
@@ -31,7 +27,7 @@ const PlaceOrderScreen = () => {
         if(success) {
             navigate(`/order/${order._id}`)
         }
-    }, [success, order])
+    }, [success, order, navigate])
 
     const placeOrderHandler = () => {
         dispatch(createOrder({

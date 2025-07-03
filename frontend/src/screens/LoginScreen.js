@@ -32,7 +32,7 @@ const LoginScreen = () => {
                 navigate(`/${redirect}`)
             }
         }
-    }, [dispatch, userInfo, redirect])
+    }, [dispatch, userInfo, redirect, navigate])
 
     const submitHandler = (e) => {
         e.preventDefault()
