@@ -49,7 +49,6 @@ const UserListScreen = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {console.log(users)}
                     {users.map(user =>
                         <tr key={user._id}>
                             <td>{user._id}</td>

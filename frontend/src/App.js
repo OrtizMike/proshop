@@ -14,6 +14,8 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
+import ProductListScreen from './screens/ProductListScreen';
+import ProductEditScreen from './screens/ProductEditScreen';
 
 const App = props => {
   return (
@@ -29,9 +31,11 @@ const App = props => {
             <Route exact path="/login" element={<LoginScreen />}></Route>
             <Route exact path="/register" element={<RegisterScreen />}></Route>
             <Route exact path="/products/:id" element={<ProductScreen />}></Route>
+            <Route exact path="/admin/product/:id/edit" element={<ProductEditScreen />}></Route>
             <Route exact path="/cart/:id?" element={<CartScreen />}></Route>
             <Route exact path="/admin/userlist" element={<UserListScreen />}></Route>
             <Route exact path="/admin/user/:id/edit" element={<UserEditScreen />}></Route>
+            <Route exact path="/admin/productlist" element={<ProductListScreen />}></Route>
             <Route exact path="/" element={<HomeScreen />}></Route>
           </Routes>
         </Container>
